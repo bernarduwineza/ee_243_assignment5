@@ -31,7 +31,7 @@ def main():
     # DEFINE VARIABLE
     BATCH_SIZE = 32                 # YOU MAY CHANGE THIS VALUE
     EPOCH_NUM = 100                  # YOU MAY CHANGE THIS VALUE
-    LR = 0.001                      # YOU MAY CHANGE THIS VALUE
+    LR = 0.01                      # YOU MAY CHANGE THIS VALUE
     MODEL_SAVE_PATH = './Models'
 
     if not os.path.exists(MODEL_SAVE_PATH):
@@ -119,7 +119,7 @@ def main():
 
             if i % 20 == 19:    # print every 20 mini-batches
                 print('Train: [%d, %5d] loss: %.3f acc: %.3f' %
-                      (epoch + 1, i + 1, running_loss / 20,100.0*correct/total))
+                      (epoch + 1, i + 1, running_loss / 20, 100.0*correct/total))
                 running_loss = 0.0
 
         # TEST LEARNT MODEL ON TESTSET
