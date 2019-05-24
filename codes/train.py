@@ -131,6 +131,7 @@ def main():
             for data in testloader:
                 # YOUR CODE HERE
                 images, labels = data
+                labels = labels.to(device)
                 outputs = net(images.to(device))
                 _, predicted = torch.max(outputs.data, 1)
                 total += labels.size(0)
