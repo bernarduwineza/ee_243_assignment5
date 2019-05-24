@@ -41,7 +41,7 @@ class ConvNet(nn.Module):
         out = out.reshape(out.size(0), -1)
 
         out = self.drop_out(out)
-        out = self.fc1(out)
+        out = F.relu(self.fc1(out))
         out = self.fc2(out)
         return out
 
