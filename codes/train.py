@@ -97,7 +97,8 @@ def main():
 
             # forward + backward + optimize
             outputs = net(inputs.to(device))
-            loss = criterion(outputs, labels.to(device))
+            labels = labels.to(device)
+            loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()
 
