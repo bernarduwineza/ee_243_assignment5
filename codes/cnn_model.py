@@ -29,7 +29,7 @@ class ConvNet(nn.Module):
             nn.ReLU()
         )
         self.drop_out = nn.Dropout()
-        self.fc1 = nn.Linear(6*6*12, 100)
+        self.fc1 = nn.Linear(4*4*12, 100)
         self.fc2 = nn.Linear(100, 10)
         
         if init_weights:
