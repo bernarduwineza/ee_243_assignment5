@@ -11,21 +11,24 @@ class ConvNet(nn.Module):
         super(ConvNet, self).__init__()
         self.conv1 = nn.Sequential(
             nn.Conv2d(3, 12, kernel_size=4, stride=1, padding=1),
+            nn.BatchNorm2d(12),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2)
         )
         self.conv2 = nn.Sequential(
             nn.Conv2d(12, 48, kernel_size=4, stride=2, padding=1),
-            nn.ReLU(),
-
+            nn.BatchNorm2d(48),
+            nn.ReLU()
         )
         self.conv3 = nn.Sequential(
             nn.Conv2d(48, 48, kernel_size=2, stride=2, padding=1),
+            nn.BatchNorm2d(48),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2)
         )
         self.conv4 = nn.Sequential(
             nn.Conv2d(48, 12, kernel_size=1, stride=1, padding=1),
+            nn.BatchNorm2d(12),
             nn.ReLU()
         )
         self.drop_out = nn.Dropout()
