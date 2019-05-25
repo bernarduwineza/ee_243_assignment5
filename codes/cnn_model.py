@@ -10,8 +10,9 @@ class ConvNet(nn.Module):
     def __init__(self, init_weights=False):
         super(ConvNet, self).__init__()
         self.conv1 = nn.Sequential(
-            nn.Conv2d(3, 12, kernel_size=2, stride=2, padding=0),
-            nn.ReLU()
+            nn.Conv2d(3, 12, kernel_size=5, stride=1, padding=1),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2)
         )
         self.conv2 = nn.Sequential(
             nn.Conv2d(12, 48, kernel_size=2, stride=2, padding=0),
