@@ -29,7 +29,7 @@ from multiprocessing import freeze_support
 
 def main():
     # DEFINE VARIABLE
-    BATCH_SIZE = 128                 # YOU MAY CHANGE THIS VALUE
+    BATCH_SIZE = 256                 # YOU MAY CHANGE THIS VALUE
     EPOCH_NUM = 100                  # YOU MAY CHANGE THIS VALUE
     LR = 0.01                      # YOU MAY CHANGE THIS VALUE
     MODEL_SAVE_PATH = './Models'
