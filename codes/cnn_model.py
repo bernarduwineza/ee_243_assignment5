@@ -19,7 +19,7 @@ class ConvNet(nn.Module):
             nn.Conv2d(12, 48, kernel_size=4, stride=1, padding=2),
             nn.BatchNorm2d(48),
             nn.ReLU(),
-	    nn.MaxPool2d(2,1)
+            nn.MaxPool2d(2, 1)
         )
         self.conv3 = nn.Sequential(
             nn.Conv2d(48, 48, kernel_size=4, stride=2, padding=1),
@@ -32,9 +32,9 @@ class ConvNet(nn.Module):
             nn.ReLU()
         )
         self.drop_out = nn.Dropout()
-        self.fc1 = nn.Linear(17*17*12, 100)
+        self.fc1 = nn.Linear(17 * 17 * 12, 100)
         self.fc2 = nn.Linear(100, 10)
-        
+
         if init_weights:
             self._initialize_weights()
 
@@ -62,4 +62,3 @@ class ConvNet(nn.Module):
             elif isinstance(m, nn.Linear):
                 nn.init.normal_(m.weight, 0, 0.01)
                 nn.init.constant_(m.bias, 0)
-
