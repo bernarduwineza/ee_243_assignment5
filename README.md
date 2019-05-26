@@ -2,7 +2,7 @@
 ### Design a Convolutional Network and train it  on CIFAR-10
 
 #### First try: 
-Batch size = 128 \\
+Batch size = 128 \newline
 Learning rate = 0.001 \\
 Epochs =200
 
