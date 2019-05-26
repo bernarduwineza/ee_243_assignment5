@@ -10,21 +10,21 @@ class ConvNet(nn.Module):
     def __init__(self, init_weights=False):
         super(ConvNet, self).__init__()
         self.conv1 = nn.Sequential(
-            nn.Conv2d(3, 12, kernel_size=4, stride=1, padding=1),
+            nn.Conv2d(3, 12, kernel_size=4, stride=1, padding=2),
             nn.BatchNorm2d(12),
             nn.ReLU(),
-            nn.MaxPool2d(kernel_size=2, stride=2)
+            nn.MaxPool2d(kernel_size=4, stride=1)
         )
         self.conv2 = nn.Sequential(
-            nn.Conv2d(12, 48, kernel_size=4, stride=2, padding=1),
-            nn.BatchNorm2d(48),
-            nn.ReLU()
-        )
-        self.conv3 = nn.Sequential(
-            nn.Conv2d(48, 48, kernel_size=2, stride=2, padding=1),
+            nn.Conv2d(12, 48, kernel_size=4, stride=1, padding=2),
             nn.BatchNorm2d(48),
             nn.ReLU(),
-            nn.MaxPool2d(kernel_size=2, stride=2)
+	    nn.MaxPool2d(2,1)
+        )
+        self.conv3 = nn.Sequential(
+            nn.Conv2d(48, 48, kernel_size=4, stride=2, padding=1),
+            nn.BatchNorm2d(48),
+            nn.ReLU()
         )
         self.conv4 = nn.Sequential(
             nn.Conv2d(48, 12, kernel_size=1, stride=1, padding=1),
@@ -32,7 +32,7 @@ class ConvNet(nn.Module):
             nn.ReLU()
         )
         self.drop_out = nn.Dropout()
-        self.fc1 = nn.Linear(4*4*12, 100)
+        self.fc1 = nn.Linear(17*17*12, 100)
         self.fc2 = nn.Linear(100, 10)
         
         if init_weights:
