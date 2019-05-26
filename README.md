@@ -1,2 +1,2 @@
-# ee_243_assignment5
+# Advanced Computer Vision Assignment 5
 Design a Convolutional Network and train it  on CIFAR-10
