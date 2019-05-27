@@ -74,7 +74,7 @@ def main():
     optimizer = optim.SGD(net.parameters(), lr=LR, momentum=0.9)
 
     ########################################################################
-    # 4. TRAUB THE NETWORK
+    # 4. TRAIN THE NETWORK
     ########################################################################
 
     test_accuracy = []
@@ -146,10 +146,12 @@ def main():
             torch.save(net, MODEL_SAVE_PATH + '/my_best_model.pth')
             print("Model saved...")
 
-    np.save('test_accuracy.npy', test_accuracy); sio.savemat('test_accuracy.mat',
-                                                             mdict={'test_accuracy': test_accuracy})
-    np.save('train_accuracy.npy', train_accuracy); sio.savemat('train_accuracy.mat',
-                                                               mdict={'train_accuracy': train_accuracy})
+    np.save('test_accuracy.npy', test_accuracy)
+    sio.savemat('test_accuracy.mat', mdict={'test_accuracy': test_accuracy})
+
+    np.save('train_accuracy.npy', train_accuracy)
+    sio.savemat('train_accuracy.mat', mdict={'train_accuracy': train_accuracy})
+
     np.save('train_loss.npy', train_loss)
     sio.savemat('train_loss.mat', mdict={'train_loss': train_loss})
 
