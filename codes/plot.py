@@ -1,8 +1,9 @@
 """
 Plot the network characteristics
 """
-
+import matplotlib
 from matplotlib import pyplot as plt
+matplotlib.use('Agg')
 import numpy as np
 
 test_accuracy = np.load('test_accuracy.npy')

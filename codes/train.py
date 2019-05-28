@@ -29,8 +29,8 @@ from multiprocessing import freeze_support
 
 def main():
     # DEFINE VARIABLE
-    BATCH_SIZE = 128                # YOU MAY CHANGE THIS VALUE
-    EPOCH_NUM = 200                  # YOU MAY CHANGE THIS VALUE
+    BATCH_SIZE = 64                # YOU MAY CHANGE THIS VALUE
+    EPOCH_NUM = 100                  # YOU MAY CHANGE THIS VALUE
     LR = 0.001                      # YOU MAY CHANGE THIS VALUE
     MODEL_SAVE_PATH = './Models'
 
@@ -146,14 +146,14 @@ def main():
             torch.save(net, MODEL_SAVE_PATH + '/my_best_model.pth')
             print("Model saved...")
 
-    np.save('test_accuracy.npy', test_accuracy)
-    sio.savemat('test_accuracy.mat', mdict={'test_accuracy': test_accuracy})
+    np.save('test_accuracy1.npy', test_accuracy)
+    sio.savemat('test_accuracy1.mat', mdict={'test_accuracy': test_accuracy})
 
-    np.save('train_accuracy.npy', train_accuracy)
-    sio.savemat('train_accuracy.mat', mdict={'train_accuracy': train_accuracy})
+    np.save('train_accuracy1.npy', train_accuracy)
+    sio.savemat('train_accuracy1.mat', mdict={'train_accuracy': train_accuracy})
 
-    np.save('train_loss.npy', train_loss)
-    sio.savemat('train_loss.mat', mdict={'train_loss': train_loss})
+    np.save('train_loss1.npy', train_loss)
+    sio.savemat('train_loss1.mat', mdict={'train_loss': train_loss})
 
     print('Finished Training')
 

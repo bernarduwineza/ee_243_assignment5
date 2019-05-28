@@ -31,7 +31,7 @@ class ConvNet(nn.Module):
             nn.BatchNorm2d(12),
             nn.ReLU()
         )
-        self.drop_out = nn.Dropout()
+        self.drop_out = nn.Dropout(0.9)
         self.fc1 = nn.Linear(17 * 17 * 12, 100)
         self.fc2 = nn.Linear(100, 10)
 
